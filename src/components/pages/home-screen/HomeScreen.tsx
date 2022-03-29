@@ -6,12 +6,17 @@ import BalanceCard from '../../molecules/balance-card';
 const DUMMY_BALANCE = '9.200.301';
 
 export default function HomeScreen() {
+  const handleOnPressTopUp = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
       <Header />
 
       <View style={styles.wrapper}>
-        <BalanceCard currentBalance={DUMMY_BALANCE} />
+        <BalanceCard
+          currentBalance={DUMMY_BALANCE}
+          onPressTopUp={handleOnPressTopUp}
+        />
       </View>
     </SafeAreaView>
   );

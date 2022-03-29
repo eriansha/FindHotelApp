@@ -1,18 +1,29 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  GestureResponderEvent,
+} from 'react-native';
 import Caption from '../../atoms/caption';
 
+import VectorImage from 'react-native-vector-image';
 import MainText from '../../atoms/main-text';
 
 interface BalanceCardProps {
   currentBalance: number | string;
+  onPressTopUp: (event: GestureResponderEvent) => void | undefined;
 }
 
 /**
  * Represent account balance information
  * @param {number|string} currentBalance - current account balance
+ * @param {function} onPressTopUp - handler to top up new balance to the account
  */
-export default function BalanceCard({currentBalance}: BalanceCardProps) {
+export default function BalanceCard({
+  currentBalance,
+  onPressTopUp,
+}: BalanceCardProps) {
   // TODO: might use currency utils
   const balance = `IDR ${currentBalance}`;
 
@@ -25,7 +36,9 @@ export default function BalanceCard({currentBalance}: BalanceCardProps) {
         </MainText>
       </View>
 
-      <Text style={styles.wrapperIcon}>+</Text>
+      <TouchableOpacity onPress={onPressTopUp} style={styles.wrapperIcon}>
+        <VectorImage source={require('../../../assets/icon/top-up-icon.svg')} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -35,6 +48,7 @@ const styles = StyleSheet.create({
     width: '90%',
     padding: 10,
     borderRadius: 12,
+    paddingHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#ffff',
@@ -44,5 +58,8 @@ const styles = StyleSheet.create({
   },
   wrapperIcon: {
     alignSelf: 'center',
+    backgroundColor: '#E4EDFF',
+    padding: 5,
+    borderRadius: 4,
   },
 });
