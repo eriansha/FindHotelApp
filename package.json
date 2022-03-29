@@ -7,12 +7,14 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "assets:generate": "react-native-vector-image generate"
   },
   "dependencies": {
+    "@klarna/react-native-vector-drawable": "^0.3.0",
     "react": "17.0.2",
-    "react-icons": "^4.3.1",
-    "react-native": "0.67.4"
+    "react-native": "0.67.4",
+    "react-native-vector-image": "^0.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
