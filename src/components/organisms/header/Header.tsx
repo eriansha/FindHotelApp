@@ -1,26 +1,59 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  GestureResponderEvent,
+} from 'react-native';
 import MainText from '../../atoms/main-text';
+import VectorImage from 'react-native-vector-image';
 
-export default function Header() {
+interface HeaderProps {
+  onPressMenu: (event: GestureResponderEvent) => void | undefined;
+  onPressNotificationBell: (event: GestureResponderEvent) => void | undefined;
+}
+
+/**
+ * Main header
+ * @param {function} onPressMenu - handler to open/close the menu
+ * @param {function} onPressNotificationBell - handler to open the notification inbox
+ */
+const Header: React.FC<HeaderProps> = ({
+  onPressMenu,
+  onPressNotificationBell,
+}) => {
   return (
     <View style={styles.container}>
-      <Text>+</Text>
+      <TouchableOpacity onPress={onPressMenu} style={styles.wrapperIcon}>
+        <VectorImage source={require('../../../assets/icon/menu.svg')} />
+      </TouchableOpacity>
       <MainText fontSize={20} color={'#fff'}>
-        Discover
+        {'Discover'}
       </MainText>
-      <Text>+</Text>
+      <TouchableOpacity
+        onPress={onPressNotificationBell}
+        style={styles.wrapperIcon}>
+        <VectorImage source={require('../../../assets/icon/bell.svg')} />
+      </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#5589F0',
     paddingHorizontal: 24,
     paddingVertical: 30,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     height: 125,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  wrapperIcon: {
+    backgroundColor: '#6D9CFA',
+    borderRadius: 4,
+    padding: 5,
   },
 });
+
+export default Header;
