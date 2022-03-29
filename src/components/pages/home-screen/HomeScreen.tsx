@@ -8,9 +8,16 @@ const DUMMY_BALANCE = '9.200.301';
 export default function HomeScreen() {
   const handleOnPressTopUp = () => {};
 
+  const handlerPressMenu = () => {};
+
+  const handlerPressNotificationBell = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      <Header
+        onPressMenu={handlerPressMenu}
+        onPressNotificationBell={handlerPressNotificationBell}
+      />
 
       <View style={styles.wrapper}>
         <BalanceCard
@@ -31,6 +38,6 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     position: 'absolute',
-    top: 70,
+    top: 80,
   },
 });
