@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {StyleSheet, Text} from 'react-native';
 
 interface CaptionProps {
-  children: string;
+  children: ReactNode;
   fontSize: number;
 }
 
