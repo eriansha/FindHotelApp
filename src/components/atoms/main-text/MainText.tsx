@@ -22,7 +22,9 @@ interface MainTextProps {
 /**
  * MainText text
  * @param {string} children text
+ * @param {string} color text color
  * @param {number} fontSize font size
+ * @param {string} fontWeight font weight
  */
 const MainText: React.FC<MainTextProps> = ({
   children,
