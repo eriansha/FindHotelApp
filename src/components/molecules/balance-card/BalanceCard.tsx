@@ -31,7 +31,7 @@ export default function BalanceCard({
     <View style={styles.container}>
       <View style={styles.wrapperContent}>
         <Caption fontSize={14}>Your Balance</Caption>
-        <MainText fontSize={18} color={'#4E82EA'}>
+        <MainText fontWeight="700" fontSize={18} color={'#4E82EA'}>
           {balance}
         </MainText>
       </View>

@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({
       <TouchableOpacity onPress={onPressMenu} style={styles.wrapperIcon}>
         <VectorImage source={require('../../../assets/icon/menu.svg')} />
       </TouchableOpacity>
-      <MainText fontSize={20} color={'#fff'}>
+      <MainText fontWeight="bold" fontSize={20} color={'#fff'}>
         {'Discover'}
       </MainText>
       <TouchableOpacity

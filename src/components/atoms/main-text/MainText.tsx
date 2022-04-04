@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {StyleSheet, Text} from 'react-native';
 
 interface MainTextProps {
-  children: string;
-  fontSize: number;
-  color: string;
+  children: ReactNode;
+  fontSize?: number;
+  fontWeight?:
+    | 'normal'
+    | 'bold'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900';
+  color?: string;
 }
 
 /**
@@ -12,11 +24,14 @@ interface MainTextProps {
  * @param {string} children text
  * @param {number} fontSize font size
  */
-const MainText: React.FC<MainTextProps> = ({children, fontSize, color}) => {
+const MainText: React.FC<MainTextProps> = ({
+  children,
+  fontSize = 12,
+  fontWeight = 'normal',
+  color = '#000',
+}) => {
   return (
-    <Text style={[styles.main, {fontSize: fontSize, color: color}]}>
-      {children}
-    </Text>
+    <Text style={[styles.main, {fontSize, fontWeight, color}]}>{children}</Text>
   );
 };
 
