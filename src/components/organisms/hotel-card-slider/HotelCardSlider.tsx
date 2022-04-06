@@ -1,8 +1,7 @@
-import MainText from '../../atoms/main-text';
 import React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
 import HotelCard from '../../molecules/hotel-card';
-import LinkedText from '../../atoms/linked-text';
+import SectionTitle from '../../molecules/section-title';
 
 import {mainHotel1, mainHotel2} from '../../../assets';
 
@@ -37,12 +36,7 @@ interface Hotel {
 const HotelCardSlider: React.FC = ({}) => {
   return (
     <View style={styles.base}>
-      <View style={styles.text}>
-        <MainText fontWeight="700" fontSize={18}>
-          Recommended Hotels
-        </MainText>
-        <LinkedText>View All</LinkedText>
-      </View>
+      <SectionTitle label="Recommended Hotels" />
 
       <ScrollView horizontal>
         {HOTELS.map((hotel: Hotel) => (
