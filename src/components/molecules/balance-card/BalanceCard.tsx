@@ -9,9 +9,10 @@ import Caption from '../../atoms/caption';
 
 import VectorImage from 'react-native-vector-image';
 import MainText from '../../atoms/main-text';
+import PriceUtils from '../../../utils/price-utils';
 
 interface BalanceCardProps {
-  currentBalance: number | string;
+  currentBalance: number;
   onPressTopUp: (event: GestureResponderEvent) => void | undefined;
 }
 
@@ -24,15 +25,15 @@ export default function BalanceCard({
   currentBalance,
   onPressTopUp,
 }: BalanceCardProps) {
-  // TODO: might use currency utils
-  const balance = `IDR ${currentBalance}`;
+  const priceUtils = new PriceUtils();
+  const parsedBalance = priceUtils.format(currentBalance);
 
   return (
     <View style={styles.container}>
       <View style={styles.wrapperContent}>
         <Caption fontSize={14}>Your Balance</Caption>
         <MainText fontWeight="700" fontSize={18} color={'#4E82EA'}>
-          {balance}
+          {parsedBalance}
         </MainText>
       </View>
 

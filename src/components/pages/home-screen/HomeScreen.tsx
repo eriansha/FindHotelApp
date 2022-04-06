@@ -3,7 +3,7 @@ import {SafeAreaView, StyleSheet, View} from 'react-native';
 import Header from '../../organisms/header';
 import BalanceCard from '../../molecules/balance-card';
 
-const DUMMY_BALANCE = '9.200.301';
+const DUMMY_BALANCE = 9200301;
 
 export default function HomeScreen() {
   const handleOnPressTopUp = () => {};
