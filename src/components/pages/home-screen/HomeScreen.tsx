@@ -2,6 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import Header from '../../organisms/header';
 import BalanceCard from '../../molecules/balance-card';
+import HotelCardSlider from '../../organisms/hotel-card-slider';
 
 const DUMMY_BALANCE = 9200301;
 
@@ -24,6 +25,8 @@ export default function HomeScreen() {
           currentBalance={DUMMY_BALANCE}
           onPressTopUp={handleOnPressTopUp}
         />
+
+        <HotelCardSlider />
       </View>
     </SafeAreaView>
   );
@@ -34,10 +37,9 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   wrapper: {
-    flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'center',
     position: 'absolute',
     top: 80,
+    width: '100%',
+    alignItems: 'center',
   },
 });
