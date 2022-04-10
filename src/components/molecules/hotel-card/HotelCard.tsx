@@ -25,32 +25,33 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
     <View style={styles.container}>
       <Image style={styles.thumbnail} source={hotel.thumbnail} />
 
-      <View style={styles.mainText}>
+      <View style={[styles.baseText, styles.mainText]}>
         <View>
           <MainText fontWeight="500" fontSize={16}>
             {hotel.name}
           </MainText>
 
-          <View style={styles.location}>
+          <View style={styles.icon}>
             <VectorImage style={{marginRight: 10}} source={pinIcon} />
             <Caption fontSize={14}>{hotel.location}</Caption>
           </View>
         </View>
 
-        <View style={styles.rating}>
+        <View style={styles.icon}>
           <Caption fontSize={14}>{hotel.rate}</Caption>
           <VectorImage style={{marginLeft: 10}} source={starIcon} />
         </View>
       </View>
 
+      {/* TODO: need to make dynamic margin */}
       <View style={styles.dividen} />
 
-      <View style={styles.mainText}>
+      <View style={[styles.baseText, styles.priceText]}>
         <View>
           <Caption fontSize={12}>Price Start from:</Caption>
         </View>
 
-        <View style={styles.rating}>
+        <View>
           <MainText color="#4E82EA" fontSize={14}>
             {parsedPrice} <Caption fontSize={12}>/night</Caption>
           </MainText>
@@ -62,11 +63,12 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    maxHeight: 350,
     backgroundColor: '#fff',
     borderRadius: 10,
     marginHorizontal: 10,
     padding: 15,
-    height: 350,
   },
   thumbnail: {
     width: 256,
@@ -76,24 +78,24 @@ const styles = StyleSheet.create({
   dividen: {
     borderBottomColor: '#EEEEEE',
     borderBottomWidth: 1,
-    marginHorizontal: -10,
+    marginHorizontal: -15,
     marginVertical: 10,
   },
-  mainText: {
-    marginVertical: 5,
+  baseText: {
     justifyContent: 'space-between',
     flexDirection: 'row',
   },
-  location: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignContent: 'center',
+  mainText: {
+    marginTop: 15,
+    marginBottom: 10,
   },
-  rating: {
-    alignSelf: 'center',
+  priceText: {
+    marginBottom: 15,
+  },
+  icon: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignContent: 'center',
+    alignSelf: 'center',
   },
 });
 

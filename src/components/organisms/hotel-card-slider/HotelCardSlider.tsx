@@ -15,7 +15,7 @@ const HOTELS = [
     price: 599999,
   },
   {
-    id: 1,
+    id: 2,
     thumbnail: mainHotel2,
     name: 'Bali, Denpasar',
     location: 'Daino Sas Hotel',
@@ -49,13 +49,7 @@ const HotelCardSlider: React.FC = ({}) => {
 
 const styles = StyleSheet.create({
   base: {
-    marginVertical: 20,
-  },
-  text: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginHorizontal: 20,
-    marginVertical: 20,
+    marginTop: 20,
   },
 });
 

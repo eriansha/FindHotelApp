@@ -41,13 +41,13 @@ const Header: React.FC<HeaderProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#5589F0',
-    paddingHorizontal: 24,
-    paddingVertical: 30,
-    height: 125,
+    flex: 0.1,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    paddingHorizontal: 24,
+    paddingVertical: 30,
+    backgroundColor: '#5589F0',
   },
   wrapperIcon: {
     backgroundColor: '#6D9CFA',

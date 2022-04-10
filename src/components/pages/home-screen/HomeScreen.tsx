@@ -34,12 +34,13 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative',
+    flex: 1,
   },
   wrapper: {
     position: 'absolute',
     top: 80,
     width: '100%',
+    paddingHorizontal: 20,
     alignItems: 'center',
   },
 });

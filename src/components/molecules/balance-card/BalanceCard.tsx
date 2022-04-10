@@ -32,6 +32,10 @@ export default function BalanceCard({
     <View style={styles.container}>
       <View style={styles.wrapperContent}>
         <Caption fontSize={14}>Your Balance</Caption>
+
+        {/* Workaround */}
+        <View style={{marginVertical: 3}} />
+
         <MainText fontWeight="700" fontSize={18} color={'#4E82EA'}>
           {parsedBalance}
         </MainText>
@@ -46,10 +50,10 @@ export default function BalanceCard({
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
-    padding: 10,
-    borderRadius: 12,
+    width: '100%',
+    paddingVertical: 10,
     paddingHorizontal: 20,
+    borderRadius: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#ffff',

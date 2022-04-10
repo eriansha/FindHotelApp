@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   text: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     marginVertical: 20,
   },
 });
