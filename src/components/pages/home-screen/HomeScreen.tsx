@@ -1,8 +1,9 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 import Header from '../../organisms/header';
 import BalanceCard from '../../molecules/balance-card';
 import HotelCardSlider from '../../organisms/hotel-card-slider';
+import HotelListItem from '../../organisms/hotel-list-item';
 
 const DUMMY_BALANCE = 9200301;
 
@@ -15,19 +16,25 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header
-        onPressMenu={handlerPressMenu}
-        onPressNotificationBell={handlerPressNotificationBell}
-      />
-
-      <View style={styles.wrapper}>
-        <BalanceCard
-          currentBalance={DUMMY_BALANCE}
-          onPressTopUp={handleOnPressTopUp}
+      <ScrollView alwaysBounceVertical>
+        <Header
+          onPressMenu={handlerPressMenu}
+          onPressNotificationBell={handlerPressNotificationBell}
         />
 
-        <HotelCardSlider />
-      </View>
+        <View style={styles.sections}>
+          <View style={styles.balanceCardWrapper}>
+            <BalanceCard
+              currentBalance={DUMMY_BALANCE}
+              onPressTopUp={handleOnPressTopUp}
+            />
+          </View>
+
+          <HotelCardSlider />
+
+          <HotelListItem />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -36,11 +43,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  wrapper: {
-    position: 'absolute',
-    top: 80,
-    width: '100%',
+  sections: {
+    flex: 1,
     paddingHorizontal: 20,
+  },
+  balanceCardWrapper: {
+    width: '100%',
+    top: -30,
     alignItems: 'center',
   },
 });

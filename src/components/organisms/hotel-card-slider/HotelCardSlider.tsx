@@ -49,7 +49,7 @@ const HotelCardSlider: React.FC = ({}) => {
 
 const styles = StyleSheet.create({
   base: {
-    marginTop: 20,
+    flex: 1,
   },
 });
 
