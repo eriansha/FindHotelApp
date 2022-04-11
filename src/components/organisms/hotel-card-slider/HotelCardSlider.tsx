@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import HotelCard from '../../molecules/hotel-card';
 import SectionTitle from '../../molecules/section-title';
 
@@ -33,14 +33,20 @@ interface Hotel {
   price: number;
 }
 
-const HotelCardSlider: React.FC = ({}) => {
+interface HotelCardSliderProps {
+  onPressHotel: () => void;
+}
+
+const HotelCardSlider: React.FC<HotelCardSliderProps> = ({onPressHotel}) => {
   return (
     <View style={styles.base}>
       <SectionTitle label="Recommended Hotels" />
 
       <ScrollView horizontal>
         {HOTELS.map((hotel: Hotel) => (
-          <HotelCard key={hotel.id} hotel={hotel} />
+          <TouchableOpacity onPress={onPressHotel}>
+            <HotelCard key={hotel.id} hotel={hotel} />
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>

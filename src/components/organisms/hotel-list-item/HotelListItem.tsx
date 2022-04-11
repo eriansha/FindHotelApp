@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import SectionTitle from '../../molecules/section-title';
 import HotelItem from '../../molecules/hotel-item';
 
@@ -23,13 +23,19 @@ interface Hotel {
   rate: number;
 }
 
-const HotelListItem: React.FC = ({}) => {
+interface HoteListItemProps {
+  onPressItem: () => void;
+}
+
+const HotelListItem: React.FC<HoteListItemProps> = ({onPressItem}) => {
   return (
     <View style={styles.base}>
       <SectionTitle label="New Hotels Experience" />
 
       {HOTELS.map((hotel: Hotel) => (
-        <HotelItem key={hotel.id} hotel={hotel} />
+        <TouchableOpacity key={hotel.id} onPress={onPressItem}>
+          <HotelItem hotel={hotel} />
+        </TouchableOpacity>
       ))}
     </View>
   );

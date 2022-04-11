@@ -14,6 +14,8 @@ export default function HomeScreen() {
 
   const handlerPressNotificationBell = () => {};
 
+  const handlePressHotel = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView alwaysBounceVertical>
@@ -30,9 +32,9 @@ export default function HomeScreen() {
             />
           </View>
 
-          <HotelCardSlider />
+          <HotelCardSlider onPressHotel={handlePressHotel} />
 
-          <HotelListItem />
+          <HotelListItem onPressItem={handlePressHotel} />
         </View>
       </ScrollView>
     </SafeAreaView>
