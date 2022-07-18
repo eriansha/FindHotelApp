@@ -11,6 +11,7 @@ import VectorImage from 'react-native-vector-image';
 interface HeaderProps {
   onPressMenu: (event: GestureResponderEvent) => void | undefined;
   onPressNotificationBell: (event: GestureResponderEvent) => void | undefined;
+  hasNewNotif?: boolean;
 }
 
 /**
@@ -21,6 +22,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({
   onPressMenu,
   onPressNotificationBell,
+  hasNewNotif,
 }) => {
   return (
     <View style={styles.container}>
@@ -35,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({
         style={styles.wrapperIcon}
       >
         <VectorImage source={require('../../../assets/icon/bell.svg')} />
+        {hasNewNotif && <View style={styles.dot} />}
       </TouchableOpacity>
     </View>
   );
@@ -53,6 +56,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#6D9CFA',
     borderRadius: 4,
     padding: 5,
+    position: 'relative',
+  },
+  dot: {
+    position: 'absolute',
+    top: 4,
+    right: 6,
+    borderRadius: 6,
+    backgroundColor: '#F2735B',
+    width: 6,
+    height: 6,
   },
 });
 

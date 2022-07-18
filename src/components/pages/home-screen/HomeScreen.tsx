@@ -20,6 +20,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView alwaysBounceVertical>
         <Header
+          hasNewNotif
           onPressMenu={handlerPressMenu}
           onPressNotificationBell={handlerPressNotificationBell}
         />
