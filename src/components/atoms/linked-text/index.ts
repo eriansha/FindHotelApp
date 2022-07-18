@@ -1,1 +1,1 @@
-export {default} from './LinkedText'
+export {default} from './LinkedText';

@@ -32,7 +32,8 @@ const Header: React.FC<HeaderProps> = ({
       </MainText>
       <TouchableOpacity
         onPress={onPressNotificationBell}
-        style={styles.wrapperIcon}>
+        style={styles.wrapperIcon}
+      >
         <VectorImage source={require('../../../assets/icon/bell.svg')} />
       </TouchableOpacity>
     </View>

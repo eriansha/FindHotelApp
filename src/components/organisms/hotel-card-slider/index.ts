@@ -1,1 +1,1 @@
-export {default} from './HotelCardSlider'
+export {default} from './HotelCardSlider';
