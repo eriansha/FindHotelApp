@@ -1,11 +1,17 @@
 import React from 'react';
-import {View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+  ListRenderItem,
+} from 'react-native';
 import HotelCard from '../../molecules/hotel-card';
 import SectionTitle from '../../molecules/section-title';
 
 import {mainHotel1, mainHotel2} from '../../../assets';
 
-const HOTELS = [
+const HOTELS: Hotel[] = [
   {
     id: 1,
     thumbnail: mainHotel1,
@@ -38,17 +44,23 @@ interface HotelCardSliderProps {
 }
 
 const HotelCardSlider: React.FC<HotelCardSliderProps> = ({onPressHotel}) => {
+  const renderItem: ListRenderItem<Hotel> = ({item}) => (
+    <TouchableOpacity onPress={onPressHotel}>
+      <HotelCard key={item.id} hotel={item} />
+    </TouchableOpacity>
+  );
+
   return (
     <View style={styles.base}>
       <SectionTitle label="Recommended Hotels" />
 
-      <ScrollView horizontal>
-        {HOTELS.map((hotel: Hotel) => (
-          <TouchableOpacity onPress={onPressHotel}>
-            <HotelCard key={hotel.id} hotel={hotel} />
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+      <FlatList
+        horizontal
+        data={HOTELS}
+        renderItem={renderItem}
+        keyExtractor={item => `hotel-slider-${item.id}`}
+        showsHorizontalScrollIndicator={false}
+      />
     </View>
   );
 };
