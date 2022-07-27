@@ -6,9 +6,40 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import VectorImage from 'react-native-vector-image';
-import {activeHomeIcon, searchIcon, orderIcon, profileIcon} from './src/assets';
+import {
+  activeHomeIcon,
+  inactiveHomeIcon,
+  activeSearchIcon,
+  searchIcon,
+  activeOrderIcon,
+  orderIcon,
+  activeProfileIcon,
+  profileIcon,
+} from './src/assets';
 
 const Tab = createBottomTabNavigator();
+interface TabBarIconOptions {
+  focused: boolean;
+  color: string;
+  size: number;
+}
+
+interface BottomBarIconType {
+  option: TabBarIconOptions;
+  activeIcon: number;
+  inactiveIcon: number;
+}
+
+const BottomBarIcon: React.FC<BottomBarIconType> = ({
+  option,
+  activeIcon,
+  inactiveIcon,
+}) => {
+  const {focused} = option;
+  const icon = focused ? activeIcon : inactiveIcon;
+
+  return <VectorImage source={icon} />;
+};
 
 const App = () => {
   return (
@@ -20,7 +51,13 @@ const App = () => {
           options={{
             headerShown: false,
             tabBarLabel: 'Home',
-            tabBarIcon: () => <VectorImage source={activeHomeIcon} />,
+            tabBarIcon: option => (
+              <BottomBarIcon
+                option={option}
+                activeIcon={activeHomeIcon}
+                inactiveIcon={inactiveHomeIcon}
+              />
+            ),
           }}
         />
         <Tab.Screen
@@ -29,7 +66,13 @@ const App = () => {
           options={{
             headerShown: false,
             tabBarLabel: 'Search',
-            tabBarIcon: () => <VectorImage source={searchIcon} />,
+            tabBarIcon: option => (
+              <BottomBarIcon
+                option={option}
+                activeIcon={activeSearchIcon}
+                inactiveIcon={searchIcon}
+              />
+            ),
           }}
         />
         <Tab.Screen
@@ -38,7 +81,13 @@ const App = () => {
           options={{
             headerShown: false,
             tabBarLabel: 'Order',
-            tabBarIcon: () => <VectorImage source={orderIcon} />,
+            tabBarIcon: option => (
+              <BottomBarIcon
+                option={option}
+                activeIcon={activeOrderIcon}
+                inactiveIcon={orderIcon}
+              />
+            ),
           }}
         />
         <Tab.Screen
@@ -47,7 +96,13 @@ const App = () => {
           options={{
             headerShown: false,
             tabBarLabel: 'Profile',
-            tabBarIcon: () => <VectorImage source={profileIcon} />,
+            tabBarIcon: option => (
+              <BottomBarIcon
+                option={option}
+                activeIcon={activeProfileIcon}
+                inactiveIcon={profileIcon}
+              />
+            ),
           }}
         />
       </Tab.Navigator>

@@ -8,8 +8,12 @@ const hotelItem4 = require('./img/items/hotel_item_4.jpeg');
 const pinIcon = require('./icon/pin.svg');
 const starIcon = require('./icon/star.svg');
 const activeHomeIcon = require('./icon/active-home.svg');
+const inactiveHomeIcon = require('./icon/inactive-home.svg');
+const activeSearchIcon = require('./icon/active-search.svg');
 const searchIcon = require('./icon/search.svg');
+const activeOrderIcon = require('./icon/active-order.svg');
 const orderIcon = require('./icon/order.svg');
+const activeProfileIcon = require('./icon/active-profile.svg');
 const profileIcon = require('./icon/profile.svg');
 
 export {
@@ -24,7 +28,11 @@ export {
   pinIcon,
   starIcon,
   activeHomeIcon,
+  inactiveHomeIcon,
+  activeSearchIcon,
   searchIcon,
+  activeOrderIcon,
   orderIcon,
+  activeProfileIcon,
   profileIcon,
 };
