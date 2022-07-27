@@ -10,11 +10,11 @@ import {
   activeHomeIcon,
   inactiveHomeIcon,
   activeSearchIcon,
-  searchIcon,
+  inactiveSearchIcon,
   activeOrderIcon,
-  orderIcon,
+  inactiveOrderIcon,
   activeProfileIcon,
-  profileIcon,
+  inactiveProfileIcon,
 } from './src/assets';
 
 const Tab = createBottomTabNavigator();
@@ -70,7 +70,7 @@ const App = () => {
               <BottomBarIcon
                 option={option}
                 activeIcon={activeSearchIcon}
-                inactiveIcon={searchIcon}
+                inactiveIcon={inactiveSearchIcon}
               />
             ),
           }}
@@ -85,7 +85,7 @@ const App = () => {
               <BottomBarIcon
                 option={option}
                 activeIcon={activeOrderIcon}
-                inactiveIcon={orderIcon}
+                inactiveIcon={inactiveOrderIcon}
               />
             ),
           }}
@@ -100,7 +100,7 @@ const App = () => {
               <BottomBarIcon
                 option={option}
                 activeIcon={activeProfileIcon}
-                inactiveIcon={profileIcon}
+                inactiveIcon={inactiveProfileIcon}
               />
             ),
           }}

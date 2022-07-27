@@ -10,11 +10,11 @@ const starIcon = require('./icon/star.svg');
 const activeHomeIcon = require('./icon/active-home.svg');
 const inactiveHomeIcon = require('./icon/inactive-home.svg');
 const activeSearchIcon = require('./icon/active-search.svg');
-const searchIcon = require('./icon/search.svg');
+const inactiveSearchIcon = require('./icon/inactive-search.svg');
 const activeOrderIcon = require('./icon/active-order.svg');
-const orderIcon = require('./icon/order.svg');
+const inactiveOrderIcon = require('./icon/inactive-order.svg');
 const activeProfileIcon = require('./icon/active-profile.svg');
-const profileIcon = require('./icon/profile.svg');
+const inactiveProfileIcon = require('./icon/inactive-profile.svg');
 
 export {
   // image
@@ -30,9 +30,9 @@ export {
   activeHomeIcon,
   inactiveHomeIcon,
   activeSearchIcon,
-  searchIcon,
+  inactiveSearchIcon,
   activeOrderIcon,
-  orderIcon,
+  inactiveOrderIcon,
   activeProfileIcon,
-  profileIcon,
+  inactiveProfileIcon,
 };
