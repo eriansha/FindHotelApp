@@ -3,6 +3,7 @@ import {Location} from '../../molecules/location-picker/LocationPicker';
 import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import SearchBar from '../../atoms/search-bar/SearchBar';
+import Divider from '../../atoms/divider/Divider';
 
 const DUMMY_LOCATION: Location = {
   city: 'Bandung',
@@ -27,6 +28,8 @@ const SearchScreen: React.FC = () => {
         style={styles.searhBar}
         onChangeSearchText={handleChangeSearchText}
       />
+
+      <Divider style={styles.divider} />
     </SafeAreaView>
   );
 };
@@ -38,7 +41,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#FBFBFB',
   },
   searhBar: {
-    marginVertical: 12,
+    marginTop: 12,
+    marginBottom: 24,
+  },
+  divider: {
+    position: 'absolute',
+    top: 150,
   },
 });
 
