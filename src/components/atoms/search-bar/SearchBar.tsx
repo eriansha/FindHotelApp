@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     fontFamily: 'Poppins',
+    fontSize: 14,
     color: '#F1F1F1',
   },
 });
