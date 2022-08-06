@@ -1,14 +1,15 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, TextStyle} from 'react-native';
 
 interface LinkedTextProps {
   // TODO: provide link here
   // href?: string;
+  style?: TextStyle;
   children: string;
 }
 
-const LinkedText: React.FC<LinkedTextProps> = ({children}) => {
-  return <Text style={styles.base}>{children}</Text>;
+const LinkedText: React.FC<LinkedTextProps> = ({style, children}) => {
+  return <Text style={[styles.base, style]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
