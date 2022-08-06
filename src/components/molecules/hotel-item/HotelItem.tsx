@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
   },
+  bottomSpace: {
+    marginBottom: 12,
+  },
 });
 interface HotelItemProps {
   hotel: {
@@ -39,6 +42,7 @@ interface HotelItemProps {
     distanceUnit?: string;
   };
   infoType: INFO_TYPE;
+  withBottomSpace?: boolean;
 }
 
 export enum INFO_TYPE {
@@ -46,7 +50,11 @@ export enum INFO_TYPE {
   RATING = 'RATING',
 }
 
-const HotelItem: React.FC<HotelItemProps> = ({hotel, infoType}) => {
+const HotelItem: React.FC<HotelItemProps> = ({
+  hotel,
+  infoType,
+  withBottomSpace,
+}) => {
   const renderInfoType = () => {
     switch (infoType) {
       case INFO_TYPE.RATING:
@@ -71,7 +79,7 @@ const HotelItem: React.FC<HotelItemProps> = ({hotel, infoType}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, withBottomSpace && styles.bottomSpace]}>
       <Image
         style={styles.thumbnail}
         source={hotel.thumbnail}

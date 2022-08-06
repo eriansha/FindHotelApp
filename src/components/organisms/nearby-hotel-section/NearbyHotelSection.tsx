@@ -53,9 +53,13 @@ const NearbyHotelSection: React.FC<NearbyHotelSectionProps> = ({
     <View style={styles.base}>
       <SectionTitle label="Nearby You" withoutLink />
 
-      {HOTELS.map((hotel: Hotel) => (
+      {HOTELS.map((hotel: Hotel, index) => (
         <TouchableOpacity key={hotel.id} onPress={onPressItem}>
-          <HotelItem hotel={hotel} infoType={INFO_TYPE.DISTANCE} />
+          <HotelItem
+            hotel={hotel}
+            infoType={INFO_TYPE.DISTANCE}
+            withBottomSpace={index !== HOTELS.length - 1}
+          />
         </TouchableOpacity>
       ))}
 

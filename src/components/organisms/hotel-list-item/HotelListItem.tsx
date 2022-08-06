@@ -33,9 +33,13 @@ const HotelListItem: React.FC<HotelListItemProps> = ({onPressItem}) => {
     <View style={styles.base}>
       <SectionTitle label="New Hotels Experience" />
 
-      {HOTELS.map((hotel: Hotel) => (
+      {HOTELS.map((hotel: Hotel, index) => (
         <TouchableOpacity key={hotel.id} onPress={onPressItem}>
-          <HotelItem hotel={hotel} infoType={INFO_TYPE.RATING} />
+          <HotelItem
+            hotel={hotel}
+            infoType={INFO_TYPE.RATING}
+            withBottomSpace={index !== HOTELS.length - 1}
+          />
         </TouchableOpacity>
       ))}
     </View>
