@@ -13,10 +13,6 @@ const styles = StyleSheet.create({
   searchSuggestionContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    //justifyContent: 's',
-  },
-  badgeWrapper: {
-    marginBottom: 12,
   },
 });
 
