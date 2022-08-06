@@ -5,15 +5,16 @@ import LinkedText from '../../atoms/linked-text';
 
 interface SectionTitleProps {
   label: string;
+  withoutLink?: boolean;
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({label}) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({label, withoutLink}) => {
   return (
     <View style={styles.text}>
       <MainText fontWeight="700" fontSize={18}>
         {label}
       </MainText>
-      <LinkedText>View All</LinkedText>
+      {!withoutLink && <LinkedText>View All</LinkedText>}
     </View>
   );
 };
@@ -22,7 +23,6 @@ const styles = StyleSheet.create({
   text: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 10,
   },
 });
 
