@@ -1,4 +1,5 @@
 import LocationPicker from '../../molecules/location-picker';
+import SearchSuggestion from '../../molecules/search-suggestion';
 import {Location} from '../../molecules/location-picker/LocationPicker';
 import React, {useState} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
@@ -10,11 +11,21 @@ const DUMMY_LOCATION: Location = {
   country: 'Indonesia',
 };
 
+const LATEST_SEARCH = [
+  'Mason',
+  'Swissbell',
+  'Yello',
+  'GH Setiabudi',
+  'Damoty Hotel',
+];
+
 const SearchScreen: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchText, setSearchText] = useState<string>();
 
   const handlePressLocation = () => {};
+
+  const handlePressSuggestedText = () => {};
 
   const handleChangeSearchText = (text: string) => {
     setSearchText(text);
@@ -34,6 +45,12 @@ const SearchScreen: React.FC = () => {
         />
 
         <Divider style={styles.divider} />
+
+        <SearchSuggestion
+          style={styles.searchSuggestion}
+          suggestedText={LATEST_SEARCH}
+          onPressSuggestion={handlePressSuggestedText}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -50,6 +67,9 @@ const styles = StyleSheet.create({
   searhBar: {
     marginTop: 12,
     marginBottom: 24,
+  },
+  searchSuggestion: {
+    marginVertical: 24,
   },
   divider: {
     position: 'absolute',
