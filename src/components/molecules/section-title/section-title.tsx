@@ -1,10 +1,11 @@
 import MainText from '../../atoms/main-text';
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ViewStyle} from 'react-native';
 import LinkedText from '../../atoms/linked-text';
 
 interface SectionTitleProps {
   label: string;
+  style?: ViewStyle;
   withoutLink?: boolean;
 }
 
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
   text: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 12,
   },
 });
 
