@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import SearchBar from '../../atoms/search-bar/SearchBar';
 import Divider from '../../atoms/divider/Divider';
+import NearbyHotelSection from '../../organisms/nearby-hotel-section';
 
 const DUMMY_LOCATION: Location = {
   city: 'Bandung',
@@ -26,6 +27,8 @@ const SearchScreen: React.FC = () => {
   const handlePressLocation = () => {};
 
   const handlePressSuggestedText = () => {};
+
+  const handlePressNearbyHotem = () => {};
 
   const handleChangeSearchText = (text: string) => {
     setSearchText(text);
@@ -51,6 +54,8 @@ const SearchScreen: React.FC = () => {
           suggestedText={LATEST_SEARCH}
           onPressSuggestion={handlePressSuggestedText}
         />
+
+        <NearbyHotelSection onPressItem={handlePressNearbyHotem} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -69,7 +74,8 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   searchSuggestion: {
-    marginVertical: 24,
+    marginTom: 24,
+    marginBottom: 12,
   },
   divider: {
     position: 'absolute',
