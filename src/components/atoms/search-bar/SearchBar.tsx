@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     borderColor: '#F1F1F1',
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 50,
+    paddingVertical: 10,
     flexDirection: 'row',
   },
   searhIcon: {

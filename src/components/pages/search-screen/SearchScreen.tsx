@@ -1,7 +1,7 @@
 import LocationPicker from '../../molecules/location-picker';
 import {Location} from '../../molecules/location-picker/LocationPicker';
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import SearchBar from '../../atoms/search-bar/SearchBar';
 import Divider from '../../atoms/divider/Divider';
 
@@ -22,14 +22,19 @@ const SearchScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <LocationPicker location={DUMMY_LOCATION} onPress={handlePressLocation} />
+      <ScrollView alwaysBounceVertical contentContainerStyle={styles.content}>
+        <LocationPicker
+          location={DUMMY_LOCATION}
+          onPress={handlePressLocation}
+        />
 
-      <SearchBar
-        style={styles.searhBar}
-        onChangeSearchText={handleChangeSearchText}
-      />
+        <SearchBar
+          style={styles.searhBar}
+          onChangeSearchText={handleChangeSearchText}
+        />
 
-      <Divider style={styles.divider} />
+        <Divider style={styles.divider} />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -37,8 +42,10 @@ const SearchScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
     backgroundColor: '#FBFBFB',
+  },
+  content: {
+    padding: 24,
   },
   searhBar: {
     marginTop: 12,
