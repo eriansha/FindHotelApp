@@ -6,45 +6,6 @@ import VectorImage from 'react-native-vector-image';
 
 import {starIcon} from '../../../assets';
 
-interface HotelItemProps {
-  hotel: {
-    thumbnail: any;
-    name: string;
-    location: string;
-    rate: number;
-  };
-}
-
-const HotelItem: React.FC<HotelItemProps> = ({hotel}) => {
-  return (
-    <View style={styles.container}>
-      <Image
-        style={styles.thumbnail}
-        source={hotel.thumbnail}
-        width={70}
-        height={70}
-      />
-
-      <View style={styles.mainText}>
-        <View>
-          <MainText fontWeight="500" fontSize={14}>
-            {hotel.name}
-          </MainText>
-
-          <View style={styles.icon}>
-            <Caption fontSize={12}>{hotel.location}</Caption>
-          </View>
-        </View>
-      </View>
-
-      <View style={styles.icon}>
-        <Caption fontSize={14}>{hotel.rate}</Caption>
-        <VectorImage style={{marginLeft: 10}} source={starIcon} />
-      </View>
-    </View>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -68,5 +29,71 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
 });
+interface HotelItemProps {
+  hotel: {
+    thumbnail: any;
+    name: string;
+    location: string;
+    rate?: number;
+    distance?: number;
+    distanceUnit?: string;
+  };
+  infoType: INFO_TYPE;
+}
+
+export enum INFO_TYPE {
+  DISTANCE = 'DISTANCE',
+  RATING = 'RATING',
+}
+
+const HotelItem: React.FC<HotelItemProps> = ({hotel, infoType}) => {
+  const renderInfoType = () => {
+    switch (infoType) {
+      case INFO_TYPE.RATING:
+        return (
+          <>
+            <Caption fontSize={14}>{hotel.rate}</Caption>
+            <VectorImage style={{marginLeft: 10}} source={starIcon} />
+          </>
+        );
+
+      case INFO_TYPE.DISTANCE:
+        return (
+          <MainText color="#F2735B" fontWeight="500" fontSize={12}>
+            {hotel.distance}
+            {hotel.distanceUnit}
+          </MainText>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Image
+        style={styles.thumbnail}
+        source={hotel.thumbnail}
+        width={70}
+        height={70}
+      />
+
+      <View style={styles.mainText}>
+        <View>
+          <MainText fontWeight="500" fontSize={14}>
+            {hotel.name}
+          </MainText>
+
+          <View style={styles.icon}>
+            <Caption fontSize={12}>{hotel.location}</Caption>
+          </View>
+        </View>
+      </View>
+
+      <View style={styles.icon}>{renderInfoType()}</View>
+    </View>
+  );
+};
 
 export default HotelItem;
