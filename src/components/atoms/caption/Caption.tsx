@@ -17,7 +17,7 @@ const Caption: React.FC<CaptionProps> = ({children, fontSize}) => {
 
 const styles = StyleSheet.create({
   main: {
-    fontFamily: 'Poppins',
+    //fontFamily: 'Poppins-Light',
     color: '#B7B7B7',
     lineHeight: 21,
     fontWeight: 'normal',

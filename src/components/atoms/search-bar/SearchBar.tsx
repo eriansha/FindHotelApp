@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   textInput: {
-    fontFamily: 'Poppins',
+    //fontFamily: 'Poppins-Regular',
     fontSize: 14,
     color: '#F1F1F1',
   },

@@ -30,7 +30,7 @@ const LocationPicker: React.FC<LocationPickerProps> = ({location, onPress}) => {
 
 const styles = StyleSheet.create({
   label: {
-    fontFamily: 'Poppins',
+    //fontFamily: 'Poppins-Regular',
     letterSpacing: 0.5,
     color: '#B7B7B7',
     fontSize: 12,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   location: {
     letterSpacing: 0.5,
-    fontFamily: 'Poppins',
+    //fontFamily: 'Poppins-Regular',
     fontSize: 16,
   },
   city: {

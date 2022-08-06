@@ -39,7 +39,7 @@ const MainText: React.FC<MainTextProps> = ({
 
 const styles = StyleSheet.create({
   main: {
-    fontFamily: 'Poppins',
+    //fontFamily: 'Poppins-Bold',
     fontWeight: 'bold',
     lineHeight: 21,
     marginBottom: 5,
