@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: theme.colors.dark,
-    fontSize: 14,
+    fontSize: theme.fontSizes.body,
     lineHeight: 21,
   },
 });

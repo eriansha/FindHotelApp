@@ -60,14 +60,18 @@ const HotelItem: React.FC<HotelItemProps> = ({
       case INFO_TYPE.RATING:
         return (
           <>
-            <Caption fontSize={14}>{hotel.rate}</Caption>
+            <Caption fontSize={theme.fontSizes.body}>{hotel.rate}</Caption>
             <VectorImage style={{marginLeft: 10}} source={starIcon} />
           </>
         );
 
       case INFO_TYPE.DISTANCE:
         return (
-          <MainText color={theme.colors.red} fontWeight="500" fontSize={12}>
+          <MainText
+            color={theme.colors.red}
+            fontWeight="500"
+            fontSize={theme.fontSizes.caption}
+          >
             {hotel.distance}
             {hotel.distanceUnit}
           </MainText>
@@ -89,12 +93,14 @@ const HotelItem: React.FC<HotelItemProps> = ({
 
       <View style={styles.mainText}>
         <View>
-          <MainText fontWeight="500" fontSize={14}>
+          <MainText fontWeight="500" fontSize={theme.fontSizes.body}>
             {hotel.name}
           </MainText>
 
           <View style={styles.icon}>
-            <Caption fontSize={12}>{hotel.location}</Caption>
+            <Caption fontSize={theme.fontSizes.caption}>
+              {hotel.location}
+            </Caption>
           </View>
         </View>
       </View>

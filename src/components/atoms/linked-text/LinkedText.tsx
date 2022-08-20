@@ -16,7 +16,7 @@ const LinkedText: React.FC<LinkedTextProps> = ({style, children}) => {
 const styles = StyleSheet.create({
   base: {
     color: theme.colors.primary,
-    fontSize: 12,
+    fontSize: theme.fontSizes.caption,
   },
 });
 

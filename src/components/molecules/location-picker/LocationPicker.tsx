@@ -33,13 +33,13 @@ const styles = StyleSheet.create({
     //fontFamily: 'Poppins-Regular',
     letterSpacing: 0.5,
     color: theme.colors.grey,
-    fontSize: 12,
+    fontSize: theme.fontSizes.caption,
     marginBottom: 4,
   },
   location: {
     letterSpacing: 0.5,
     //fontFamily: 'Poppins-Regular',
-    fontSize: 16,
+    fontSize: theme.fontSizes.title,
   },
   city: {
     fontWeight: '700',

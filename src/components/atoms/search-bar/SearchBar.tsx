@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     //fontFamily: 'Poppins-Regular',
-    fontSize: 14,
+    fontSize: theme.fontSizes.body,
     color: theme.colors.grey,
   },
 });

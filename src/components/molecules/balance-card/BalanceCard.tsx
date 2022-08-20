@@ -32,12 +32,16 @@ export default function BalanceCard({
   return (
     <View style={styles.container}>
       <View style={styles.wrapperContent}>
-        <Caption fontSize={14}>Your Balance</Caption>
+        <Caption fontSize={theme.fontSizes.body}>Your Balance</Caption>
 
         {/* Workaround */}
         <View style={{marginVertical: 3}} />
 
-        <MainText fontWeight="700" fontSize={18} color={theme.colors.primary}>
+        <MainText
+          fontWeight="700"
+          fontSize={theme.fontSizes.header}
+          color={theme.colors.primary}
+        >
           {parsedBalance}
         </MainText>
       </View>

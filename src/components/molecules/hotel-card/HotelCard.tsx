@@ -28,18 +28,18 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
 
       <View style={[styles.baseText, styles.mainText]}>
         <View>
-          <MainText fontWeight="500" fontSize={16}>
+          <MainText fontWeight="500" fontSize={theme.fontSizes.title}>
             {hotel.name}
           </MainText>
 
           <View style={styles.icon}>
             <VectorImage style={{marginRight: 10}} source={pinIcon} />
-            <Caption fontSize={14}>{hotel.location}</Caption>
+            <Caption fontSize={theme.fontSizes.body}>{hotel.location}</Caption>
           </View>
         </View>
 
         <View style={styles.icon}>
-          <Caption fontSize={14}>{hotel.rate}</Caption>
+          <Caption fontSize={theme.fontSizes.body}>{hotel.rate}</Caption>
           <VectorImage style={{marginLeft: 10}} source={starIcon} />
         </View>
       </View>
@@ -49,16 +49,19 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
 
       <View style={[styles.baseText, styles.priceText]}>
         <View>
-          <Caption fontSize={12}>Price Start from:</Caption>
+          <Caption fontSize={theme.fontSizes.caption}>
+            Price Start from:
+          </Caption>
         </View>
 
         <View>
           <MainText
             color={theme.colors.primary}
-            fontSize={14}
+            fontSize={theme.fontSizes.body}
             fontWeight="bold"
           >
-            {parsedPrice} <Caption fontSize={12}>/night</Caption>
+            {parsedPrice}{' '}
+            <Caption fontSize={theme.fontSizes.caption}>/night</Caption>
           </MainText>
         </View>
       </View>

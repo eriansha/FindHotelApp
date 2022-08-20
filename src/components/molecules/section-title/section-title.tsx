@@ -2,6 +2,7 @@ import MainText from '../../atoms/main-text';
 import React from 'react';
 import {View, StyleSheet, ViewStyle} from 'react-native';
 import LinkedText from '../../atoms/linked-text';
+import theme from '../../../constant/theme';
 
 interface SectionTitleProps {
   label: string;
@@ -12,7 +13,7 @@ interface SectionTitleProps {
 const SectionTitle: React.FC<SectionTitleProps> = ({label, withoutLink}) => {
   return (
     <View style={styles.text}>
-      <MainText fontWeight="700" fontSize={18}>
+      <MainText fontWeight="700" fontSize={theme.fontSizes.header}>
         {label}
       </MainText>
       {!withoutLink && <LinkedText>View All</LinkedText>}

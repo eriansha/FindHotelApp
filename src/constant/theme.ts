@@ -11,8 +11,16 @@ const colors = {
   lightBlue: '#E4EDFF',
 };
 
+const fontSizes = {
+  header: 18,
+  title: 16,
+  body: 14,
+  caption: 12,
+};
+
 const theme = {
   colors: colors,
+  fontSizes: fontSizes,
 };
 
 export default theme;
