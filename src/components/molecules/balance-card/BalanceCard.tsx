@@ -10,6 +10,7 @@ import Caption from '../../atoms/caption';
 import VectorImage from 'react-native-vector-image';
 import MainText from '../../atoms/main-text';
 import PriceUtils from '../../../utils/price-utils';
+import theme from '../../../constant/theme';
 
 interface BalanceCardProps {
   currentBalance: number;
@@ -36,7 +37,7 @@ export default function BalanceCard({
         {/* Workaround */}
         <View style={{marginVertical: 3}} />
 
-        <MainText fontWeight="700" fontSize={18} color={'#4E82EA'}>
+        <MainText fontWeight="700" fontSize={18} color={theme.colors.primary}>
           {parsedBalance}
         </MainText>
       </View>
@@ -56,14 +57,14 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#ffff',
+    backgroundColor: theme.colors.white,
   },
   wrapperContent: {
     padding: 10,
   },
   wrapperIcon: {
     alignSelf: 'center',
-    backgroundColor: '#E4EDFF',
+    backgroundColor: theme.colors.lightBlue,
     padding: 5,
     borderRadius: 4,
   },

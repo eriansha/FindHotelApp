@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-
+import theme from '../../../constant/theme';
 export interface Location {
   country: string;
   city: string;
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   label: {
     //fontFamily: 'Poppins-Regular',
     letterSpacing: 0.5,
-    color: '#B7B7B7',
+    color: theme.colors.grey,
     fontSize: 12,
     marginBottom: 4,
   },

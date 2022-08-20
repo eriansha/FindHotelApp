@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TextStyle} from 'react-native';
+import theme from '../../../constant/theme';
 
 interface LinkedTextProps {
   // TODO: provide link here
@@ -14,7 +15,7 @@ const LinkedText: React.FC<LinkedTextProps> = ({style, children}) => {
 
 const styles = StyleSheet.create({
   base: {
-    color: '#4E82EA',
+    color: theme.colors.primary,
     fontSize: 12,
   },
 });

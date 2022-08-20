@@ -1,3 +1,4 @@
+import theme from '../../../constant/theme';
 import React, {useMemo} from 'react';
 import {View, StyleSheet, Dimensions, ViewStyle} from 'react-native';
 
@@ -13,7 +14,7 @@ const createStyles = (widthProps: number | undefined) =>
     base: {
       width: widthProps || windowWidth,
       borderWidth: StyleSheet.hairlineWidth,
-      borderColor: '#EEEEEE',
+      borderColor: theme.colors.fade,
     },
   });
 

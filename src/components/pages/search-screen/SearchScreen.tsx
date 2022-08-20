@@ -6,6 +6,7 @@ import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import SearchBar from '../../atoms/search-bar/SearchBar';
 import Divider from '../../atoms/divider/Divider';
 import NearbyHotelSection from '../../organisms/nearby-hotel-section';
+import theme from '../../../constant/theme';
 
 const DUMMY_LOCATION: Location = {
   city: 'Bandung',
@@ -64,7 +65,7 @@ const SearchScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FBFBFB',
+    backgroundColor: theme.colors.light,
   },
   content: {
     padding: 24,

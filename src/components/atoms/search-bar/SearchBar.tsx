@@ -2,13 +2,14 @@ import React from 'react';
 import {View, TextInput, StyleSheet, ViewStyle} from 'react-native';
 import VectorImage from 'react-native-vector-image';
 import {inactiveSearchIcon} from '../../../assets';
+import theme from '../../../constant/theme';
 
 const PLACEHOLDER_INPUT = 'Find your Favorite Hotels';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFFFF',
-    borderColor: '#F1F1F1',
+    backgroundColor: theme.colors.white,
+    borderColor: theme.colors.fade,
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 50,
     paddingVertical: 10,
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   textInput: {
     //fontFamily: 'Poppins-Regular',
     fontSize: 14,
-    color: '#F1F1F1',
+    color: theme.colors.grey,
   },
 });
 

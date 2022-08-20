@@ -1,5 +1,6 @@
 import React, {ReactNode} from 'react';
 import {StyleSheet, Text} from 'react-native';
+import theme from '../../../constant/theme';
 
 interface MainTextProps {
   children: ReactNode;
@@ -30,7 +31,7 @@ const MainText: React.FC<MainTextProps> = ({
   children,
   fontSize = 12,
   fontWeight = 'normal',
-  color = '#000',
+  color = theme.colors.black,
 }) => {
   return (
     <Text style={[styles.main, {fontSize, fontWeight, color}]}>{children}</Text>

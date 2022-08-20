@@ -4,6 +4,7 @@ import Header from '../../organisms/header';
 import BalanceCard from '../../molecules/balance-card';
 import HotelCardSlider from '../../organisms/hotel-card-slider';
 import HotelListItem from '../../organisms/hotel-list-item';
+import theme from '../../../constant/theme';
 
 const DUMMY_BALANCE = 9200301;
 
@@ -45,7 +46,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FBFBFB',
+    backgroundColor: theme.colors.light,
   },
   sections: {
     flex: 1,

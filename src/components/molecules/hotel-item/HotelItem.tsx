@@ -3,13 +3,13 @@ import React from 'react';
 import {View, Image, StyleSheet} from 'react-native';
 import Caption from '../../atoms/caption';
 import VectorImage from 'react-native-vector-image';
-
+import theme from '../../../constant/theme';
 import {starIcon} from '../../../assets';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: theme.colors.white,
     borderRadius: 12,
     padding: 15,
     flexDirection: 'row',
@@ -67,7 +67,7 @@ const HotelItem: React.FC<HotelItemProps> = ({
 
       case INFO_TYPE.DISTANCE:
         return (
-          <MainText color="#F2735B" fontWeight="500" fontSize={12}>
+          <MainText color={theme.colors.red} fontWeight="500" fontSize={12}>
             {hotel.distance}
             {hotel.distanceUnit}
           </MainText>

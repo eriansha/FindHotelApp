@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, ViewStyle} from 'react-native';
+import theme from '../../../constant/theme';
 
 interface BadgeProps {
   style?: ViewStyle;
@@ -9,15 +10,15 @@ interface BadgeProps {
 
 const styles = StyleSheet.create({
   base: {
-    backgroundColor: '#ffffff',
-    borderColor: '#F1F1F1',
+    backgroundColor: theme.colors.white,
+    borderColor: theme.colors.fade,
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 100,
     paddingHorizontal: 22,
     paddingVertical: 6,
   },
   label: {
-    color: '#2A2B3D',
+    color: theme.colors.dark,
     fontSize: 14,
     lineHeight: 21,
   },

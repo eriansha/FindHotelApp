@@ -1,5 +1,6 @@
 import React, {ReactNode} from 'react';
 import {StyleSheet, Text} from 'react-native';
+import theme from '../../../constant/theme';
 
 interface CaptionProps {
   children: ReactNode;
@@ -18,7 +19,7 @@ const Caption: React.FC<CaptionProps> = ({children, fontSize}) => {
 const styles = StyleSheet.create({
   main: {
     //fontFamily: 'Poppins-Light',
-    color: '#B7B7B7',
+    color: theme.colors.grey,
     lineHeight: 21,
     fontWeight: 'normal',
   },

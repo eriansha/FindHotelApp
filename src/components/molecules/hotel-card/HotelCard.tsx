@@ -6,6 +6,7 @@ import PriceUtils from '../../../utils/price-utils';
 import VectorImage from 'react-native-vector-image';
 
 import {starIcon, pinIcon} from '../../../assets';
+import theme from '../../../constant/theme';
 
 interface HotelCardProps {
   hotel: {
@@ -52,7 +53,11 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
         </View>
 
         <View>
-          <MainText color="#4E82EA" fontSize={14}>
+          <MainText
+            color={theme.colors.primary}
+            fontSize={14}
+            fontWeight="bold"
+          >
             {parsedPrice} <Caption fontSize={12}>/night</Caption>
           </MainText>
         </View>
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     maxHeight: 350,
-    backgroundColor: '#fff',
+    backgroundColor: theme.colors.white,
     borderRadius: 10,
     marginHorizontal: 10,
     padding: 15,
@@ -76,7 +81,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   dividen: {
-    borderBottomColor: '#EEEEEE',
+    borderBottomColor: theme.colors.fade,
     borderBottomWidth: 1,
     marginHorizontal: -15,
     marginVertical: 10,

@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import MainText from '../../atoms/main-text';
 import VectorImage from 'react-native-vector-image';
+import theme from '../../../constant/theme';
 
 interface HeaderProps {
   onPressMenu: (event: GestureResponderEvent) => void | undefined;
@@ -29,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({
       <TouchableOpacity onPress={onPressMenu} style={styles.wrapperIcon}>
         <VectorImage source={require('../../../assets/icon/menu.svg')} />
       </TouchableOpacity>
-      <MainText fontWeight="bold" fontSize={20} color={'#fff'}>
+      <MainText fontWeight="bold" fontSize={20} color={theme.colors.white}>
         {'Discover'}
       </MainText>
       <TouchableOpacity
@@ -50,10 +51,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 30,
     paddingBottom: 50,
-    backgroundColor: '#5589F0',
+    backgroundColor: theme.colors.primary,
   },
   wrapperIcon: {
-    backgroundColor: '#6D9CFA',
+    backgroundColor: theme.colors.darkBlue,
     borderRadius: 4,
     padding: 5,
     position: 'relative',
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     top: 4,
     right: 6,
     borderRadius: 6,
-    backgroundColor: '#F2735B',
+    backgroundColor: theme.colors.red,
     width: 6,
     height: 6,
   },
