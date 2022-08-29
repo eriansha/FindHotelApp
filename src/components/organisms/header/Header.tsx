@@ -31,9 +31,10 @@ const Header: React.FC<HeaderProps> = ({
         <VectorImage source={require('../../../assets/icon/menu.svg')} />
       </TouchableOpacity>
       <MainText
-        fontWeight="bold"
         fontSize={theme.fontSizes.header}
         color={theme.colors.white}
+        fontFamily={theme.fontFamilies.semiBold}
+        fontWeight="600"
       >
         {'Discover'}
       </MainText>

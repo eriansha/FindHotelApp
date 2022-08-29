@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, ViewStyle} from 'react-native';
+import {StyleSheet, TouchableOpacity, ViewStyle} from 'react-native';
 import theme from '../../../constant/theme';
+import MainText from '../main-text';
 
 interface BadgeProps {
   style?: ViewStyle;
@@ -17,17 +18,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     paddingVertical: 6,
   },
-  label: {
-    color: theme.colors.dark,
-    fontSize: theme.fontSizes.body,
-    lineHeight: 21,
-  },
 });
 
 const Badge: React.FC<BadgeProps> = ({style, label, onPress}) => {
   return (
     <TouchableOpacity style={[styles.base, style]} onPress={onPress}>
-      <Text style={styles.label}>{label}</Text>
+      <MainText
+        color={theme.colors.dark}
+        fontSize={theme.fontSizes.body}
+        fontWeight="400"
+      >
+        {label}
+      </MainText>
     </TouchableOpacity>
   );
 };

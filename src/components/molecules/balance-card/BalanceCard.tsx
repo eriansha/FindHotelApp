@@ -38,8 +38,9 @@ export default function BalanceCard({
         <View style={{marginVertical: 3}} />
 
         <MainText
-          fontWeight="700"
           fontSize={theme.fontSizes.header}
+          fontFamily={theme.fontFamilies.semiBold}
+          fontWeight="600"
           color={theme.colors.primary}
         >
           {parsedBalance}

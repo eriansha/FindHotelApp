@@ -1,22 +1,21 @@
+import {FontFamilies} from '../../../constant/type';
 import React, {ReactNode} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, TextStyle} from 'react-native';
 import theme from '../../../constant/theme';
 
 interface MainTextProps {
   children: ReactNode;
+  style?: TextStyle;
   fontSize?: number;
-  fontWeight?:
-    | 'normal'
-    | 'bold'
-    | '100'
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900';
+  fontWeight?: TextStyle['fontWeight'];
+  fontFamily?:
+    | FontFamilies['black']
+    | FontFamilies['bold']
+    | FontFamilies['semiBold']
+    | FontFamilies['medium']
+    | FontFamilies['regular']
+    | FontFamilies['light']
+    | FontFamilies['extraLight'];
   color?: string;
 }
 
@@ -29,19 +28,23 @@ interface MainTextProps {
  */
 const MainText: React.FC<MainTextProps> = ({
   children,
+  style,
   fontSize = 12,
   fontWeight = 'normal',
+  fontFamily = theme.fontFamilies.regular,
   color = theme.colors.black,
 }) => {
   return (
-    <Text style={[styles.main, {fontSize, fontWeight, color}]}>{children}</Text>
+    <Text
+      style={[styles.base, style, {fontSize, fontWeight, color, fontFamily}]}
+    >
+      {children}
+    </Text>
   );
 };
 
 const styles = StyleSheet.create({
-  main: {
-    //fontFamily: 'Poppins-Bold',
-    fontWeight: 'bold',
+  base: {
     lineHeight: 21,
     marginBottom: 5,
   },

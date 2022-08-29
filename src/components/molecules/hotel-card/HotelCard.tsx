@@ -28,7 +28,11 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
 
       <View style={[styles.baseText, styles.mainText]}>
         <View>
-          <MainText fontWeight="500" fontSize={theme.fontSizes.title}>
+          <MainText
+            fontSize={theme.fontSizes.title}
+            fontFamily={theme.fontFamilies.medium}
+            fontWeight="500"
+          >
             {hotel.name}
           </MainText>
 
@@ -58,7 +62,8 @@ const HotelCard: React.FC<HotelCardProps> = ({hotel}) => {
           <MainText
             color={theme.colors.primary}
             fontSize={theme.fontSizes.body}
-            fontWeight="bold"
+            fontFamily={theme.fontFamilies.semiBold}
+            fontWeight={'600'}
           >
             {parsedPrice}{' '}
             <Caption fontSize={theme.fontSizes.caption}>/night</Caption>

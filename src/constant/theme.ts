@@ -1,3 +1,5 @@
+import {AppTheme} from './type';
+
 const colors = {
   primary: '#4E82EA',
   dark: '#2A2B3D',
@@ -18,7 +20,7 @@ const fontSizes = {
   caption: 12,
 };
 
-const fontFamily = {
+const fontFamilies = {
   black: 'Poppins-Black',
   bold: 'Poppins-Bold',
   semiBold: 'Poppins-SemiBold',
@@ -28,10 +30,10 @@ const fontFamily = {
   extraLight: 'Poppins-ExtraLight',
 };
 
-const theme = {
+const theme: AppTheme = {
   colors: colors,
   fontSizes: fontSizes,
-  fontFamily: fontFamily,
+  fontFamilies: fontFamilies,
 };
 
 export default theme;

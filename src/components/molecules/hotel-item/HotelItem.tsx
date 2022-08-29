@@ -69,8 +69,9 @@ const HotelItem: React.FC<HotelItemProps> = ({
         return (
           <MainText
             color={theme.colors.red}
-            fontWeight="500"
             fontSize={theme.fontSizes.caption}
+            fontFamily={theme.fontFamilies.medium}
+            fontWeight="500"
           >
             {hotel.distance}
             {hotel.distanceUnit}
@@ -93,7 +94,11 @@ const HotelItem: React.FC<HotelItemProps> = ({
 
       <View style={styles.mainText}>
         <View>
-          <MainText fontWeight="500" fontSize={theme.fontSizes.body}>
+          <MainText
+            fontSize={theme.fontSizes.body}
+            fontFamily={theme.fontFamilies.medium}
+            fontWeight={'500'}
+          >
             {hotel.name}
           </MainText>
 

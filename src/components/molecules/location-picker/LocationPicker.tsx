@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import theme from '../../../constant/theme';
+import MainText from '../../atoms/main-text';
 export interface Location {
   country: string;
   city: string;
@@ -16,13 +17,32 @@ const LocationPicker: React.FC<LocationPickerProps> = ({location, onPress}) => {
 
   return (
     <>
-      <Text style={styles.label}>Your Locations</Text>
+      <MainText
+        style={styles.label}
+        color={theme.colors.grey}
+        fontSize={theme.fontSizes.caption}
+        fontFamily={theme.fontFamilies.regular}
+        fontWeight="400"
+      >
+        Your Locations
+      </MainText>
       <TouchableOpacity onPress={onPress}>
-        <Text style={styles.location}>
-          <Text style={styles.city}>{city}</Text>
+        <MainText
+          style={styles.location}
+          fontSize={theme.fontSizes.title}
+          fontFamily={theme.fontFamilies.medium}
+          fontWeight="300"
+        >
+          <MainText
+            fontSize={theme.fontSizes.title}
+            fontFamily={theme.fontFamilies.medium}
+            fontWeight="500"
+          >
+            {city}
+          </MainText>
           {', '}
           {country}
-        </Text>
+        </MainText>
       </TouchableOpacity>
     </>
   );
@@ -30,19 +50,11 @@ const LocationPicker: React.FC<LocationPickerProps> = ({location, onPress}) => {
 
 const styles = StyleSheet.create({
   label: {
-    //fontFamily: 'Poppins-Regular',
     letterSpacing: 0.5,
-    color: theme.colors.grey,
-    fontSize: theme.fontSizes.caption,
     marginBottom: 4,
   },
   location: {
     letterSpacing: 0.5,
-    //fontFamily: 'Poppins-Regular',
-    fontSize: theme.fontSizes.title,
-  },
-  city: {
-    fontWeight: '700',
   },
 });
 

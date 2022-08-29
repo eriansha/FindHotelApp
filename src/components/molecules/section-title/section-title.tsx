@@ -13,7 +13,11 @@ interface SectionTitleProps {
 const SectionTitle: React.FC<SectionTitleProps> = ({label, withoutLink}) => {
   return (
     <View style={styles.text}>
-      <MainText fontWeight="700" fontSize={theme.fontSizes.header}>
+      <MainText
+        fontSize={theme.fontSizes.header}
+        fontFamily={theme.fontFamilies.semiBold}
+        fontWeight="600"
+      >
         {label}
       </MainText>
       {!withoutLink && <LinkedText>View All</LinkedText>}

@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, TextStyle} from 'react-native';
+import {TextStyle} from 'react-native';
+import MainText from '../main-text/MainText';
 import theme from '../../../constant/theme';
 
 interface LinkedTextProps {
@@ -10,14 +11,17 @@ interface LinkedTextProps {
 }
 
 const LinkedText: React.FC<LinkedTextProps> = ({style, children}) => {
-  return <Text style={[styles.base, style]}>{children}</Text>;
+  return (
+    <MainText
+      style={style}
+      color={theme.colors.primary}
+      fontSize={theme.fontSizes.caption}
+      fontFamily={theme.fontFamilies.medium}
+      fontWeight="500"
+    >
+      {children}
+    </MainText>
+  );
 };
-
-const styles = StyleSheet.create({
-  base: {
-    color: theme.colors.primary,
-    fontSize: theme.fontSizes.caption,
-  },
-});
 
 export default LinkedText;
