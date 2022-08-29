@@ -29,7 +29,7 @@ interface MainTextProps {
 const MainText: React.FC<MainTextProps> = ({
   children,
   style,
-  fontSize = 12,
+  fontSize = theme.fontSizes.caption,
   fontWeight = 'normal',
   fontFamily = theme.fontFamilies.regular,
   color = theme.colors.black,
