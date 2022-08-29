@@ -18,9 +18,20 @@ const fontSizes = {
   caption: 12,
 };
 
+const fontFamily = {
+  black: 'Poppins-Black',
+  bold: 'Poppins-Bold',
+  semiBold: 'Poppins-SemiBold',
+  medium: 'Poppins-Medium',
+  regular: 'Poppins-Regular',
+  light: 'Poppins-Light',
+  extraLight: 'Poppins-ExtraLight',
+};
+
 const theme = {
   colors: colors,
   fontSizes: fontSizes,
+  fontFamily: fontFamily,
 };
 
 export default theme;
